@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello React</title>
+    </head>
+    <body>
+        <div id="root">
+            <h1>First React page rendering...</h1>
+        </div>
+        <div id="root2">
+            <h1>Hello...</h1>
+        </div>
+        <div> <h1>Out React control</h1></div>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script>
+const domContainer = document.querySelector('#root');
+const root = ReactDOM.createRoot(domContainer);
+root.render(
+    React.createElement("h1", {}, "Our First React page has rendered"));   
+</script>  
+<script>
+    const domContainer2 = document.querySelector('#root2');
+    const root2 = ReactDOM.createRoot(domContainer2);
+    root2.render(
+        React.createElement("h1", {}, "Hello Awatef"));   
+    </script> 
+
+    </body>
+</html>
+
