@@ -4,7 +4,7 @@ const ProductSchema = new mongoose.Schema(
     {   title: {
         type : String,
         required : true,
-        minLength : [10, 'title must be at least 10 characters']
+        minLength : [5, 'title must be at least 5 characters']
     },
         price: {
             type : Number,
