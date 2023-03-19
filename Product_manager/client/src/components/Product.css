@@ -42,3 +42,36 @@
     font-size: 1.4rem;
     padding: 10px;
   }
+  
+  .form form input[type='submit'] {
+    background-color: #1127ed;
+    color: #fff;
+    height: 55px;
+    width: 120px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+  .btn {
+    background-color: #289a57;
+    color: #fff;
+    height: 55px;
+    width: 120px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    padding: 10px;
+
+  }
+  .btnDel {
+    background-color: #db1b1b;
+    color: #fff;
+    height: 55px;
+    width: 120px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    padding: 10px;
+
+  }

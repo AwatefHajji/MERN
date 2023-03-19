@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './Product.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 const ProductComponent = () => {
   const [title, setTitle] = useState("")
   const [price, setPrice] = useState("")
@@ -42,6 +42,24 @@ const ProductComponent = () => {
       })
       .catch(err => console.log(err))
   }, [])
+  const Navigate =useNavigate()
+   const editProduct=(id)=>{
+    Navigate("/"+id+"/edit")
+   }
+   const deleteProduct=(id)=>{
+    axios.delete("http://localhost:8000/api/products/"+id)
+    .then((res) => {
+        console.log(res, "success product deleted")
+        Navigate("/")
+        console.log(id)
+      })
+    .catch((err) => {
+        console.log(err)
+        setError(err.data.errors.description)
+        console.log(error)})
+   }
+
+
 
 
 
@@ -69,7 +87,7 @@ const ProductComponent = () => {
         {/* {JSON.stringify(products)} */}
         {products.map((product) => (
           <div key={product._id}>
-            <Link to={`/product/${product._id}`}>{product.title}</Link>
+            <Link to={`/product/${product._id}`}>{product.title}</Link> <button className='btn' onClick={() => editProduct(`${product._id}`)}>Edit</button><button className='btnDel' onClick={() => deleteProduct(`${product._id}`)}>Delete</button>
           </div>
         ))}
 

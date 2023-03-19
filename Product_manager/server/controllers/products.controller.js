@@ -23,3 +23,19 @@ module.exports.findOneProduct = (req, res) => {
        .then(product => res.json(product))
        .catch(err => res.json({ message: 'Something went wrong on reading one product', error: err }));
 }
+
+// update a product
+
+module.exports.updateProduct = (req, res) => {
+    Product.findOneAndUpdate({_id:req.params.id}, req.body)
+      .then(updatedProduct => res.json({ product: updatedProduct }))
+      .catch(err => res.json({ message: 'Something went wrong on updating one product', error: err }));
+}
+
+// delete a product
+
+module.exports.deleteProduct = (req, res) => {
+    Product.findOneAndDelete({_id:req.params.id})
+     .then(deletedProduct => res.json({ product: deletedProduct }))
+     .catch(err => res.json({ message: 'Something went wrong on deleting one product', error: err }));
+}
